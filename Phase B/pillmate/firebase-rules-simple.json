@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "devices": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
+

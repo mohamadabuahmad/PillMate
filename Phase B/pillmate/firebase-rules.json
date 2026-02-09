@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "devices": {
+      "$devicePIN": {
+        ".read": "data.child('status').val() == 'WAITING_FOR_PAIR' || (auth != null && data.child('ownerUid').val() == auth.uid)",
+        ".write": "data.child('status').val() == 'WAITING_FOR_PAIR' || (auth != null && data.child('ownerUid').val() == auth.uid) || !data.exists()",
+        "dispense": {
+          ".write": "auth != null && data.parent().child('ownerUid').val() == auth.uid"
+        },
+        "motorRotate": {
+          ".write": "auth != null && data.parent().child('ownerUid').val() == auth.uid"
+        }
+      }
+    }
+  }
+}
+
